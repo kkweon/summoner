@@ -1,6 +1,9 @@
 # 🔮 Summoner
 
-![wizard](https://user-images.githubusercontent.com/8126674/44388234-320aac00-a55a-11e8-879d-5dca68512031.png)
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/8126674/44388234-320aac00-a55a-11e8-879d-5dca68512031.png" alt="Wizard">
+</div>
+
 [![Build status](https://secure.travis-ci.org/kowainik/summoner.svg)](http://travis-ci.org/kowainik/summoner)
 [![MPL-2.0 license](https://img.shields.io/badge/license-MPL--2.0-blue.svg)](https://github.com/kowainik/summoner/blob/master/LICENSE)
 [![Hackage](https://img.shields.io/hackage/v/summoner.svg)](https://hackage.haskell.org/package/summoner)
@@ -18,6 +21,27 @@ Summoner is the tool for creating fully configured production Haskell projects.
 ## Demo
 
 [![asciicast](https://asciinema.org/a/198918.png)](https://asciinema.org/a/198918)
+
+
+<!-- Created using gh-md-toc -->
+## Table of Contents
+
+  * [Getting started](#getting-started)
+     * [Prerequisites](#prerequisites)
+     * [Installation](#installation)
+        * [Shell auto completion support](#shell-auto-completion-support)
+     * [Usage](#usage)
+        * [Configurations](#configurations)
+           * [.toml files:](#toml-files)
+              * [Global keys](#global-keys)
+              * [Custom prelude options](#custom-prelude-options)
+              * [Examples](#examples)
+           * [CLI](#cli)
+  * [Features](#features)
+  * [GHC options](#ghc-options)
+  * [Change log](#change-log)
+  * [Acknowledgments](#acknowledgments)
+
 
 ## Getting started
 
@@ -42,16 +66,23 @@ or
 
 or directly from GitHub.
 
+#### Shell auto completion support
+
 You can turn on the bash auto-completion by running the following command:
 
-```
+```bash
+# bash
 $ source <(summon --bash-completion-script `which summon`)
+
+# summon --zsh-completion-script > ~/.oh-my-zsh/completions/_summon # zsh
+# summon --fish-completion-script (which summon) | source # fish
 ```
 
+
 After that, you can call `summon` with the required command. To create a
-project, use `summon new` command specifying the prefered CLI options, follow
+project, use `summon new` command specifying the preferred CLI options, follow
 the instructions during the interactive process of the project creation, and a
-new project would be created in a subfolder as well as a repository under your
+new project would be created in a sub folder as well as a repository under your
 GitHub account (if requested).
 
 ### Usage
@@ -113,11 +144,11 @@ Here is the list of the options that could be configured for your needs:
 * `stylish.*` — `stylish.file` to provide the absolute file path to the
   `.stylish-haskell.yaml` file to use in the project. `stylish.url` to provide
   the link to the `.stylish-haskell.yaml` file to use in the project. In case of
-  the absense or wrong path/link no `.stylish-haskell.yaml` file is created.
+  the absence or wrong path/link no `.stylish-haskell.yaml` file is created.
 * `contributing.*` — `contributing.file` to provide the absolute file path to the
   `CONTRIBUTING.md` file to use in the project. `contributing.url` to provide
   the link to the `CONTRIBUTING.md` file to use in the project. In case of
-  the absense or wrong path/link no `CONTRIBUTING` file is created.
+  the absence or wrong path/link no `CONTRIBUTING` file is created.
 
 ###### Custom prelude options
 
@@ -219,7 +250,7 @@ For example,
 ```
 
 creates the fully functional project which uses custom prelude `relude`, contains
-library, executable file, tests and create private repository on [github](https://github.com)
+library, executable file, tests and create private repository on [GitHub](https://github.com)
 integrated with `Travis-CI`, `AppVeyor-CI`, but benchmarks won't be attached to this one.
 
 But when calling this command
@@ -283,7 +314,7 @@ following ghc-options are added to all stanzas.
     -Wmissing-export-lists       (ghc >= 8.4.1)
     -Wpartial-fields             (ghc >= 8.4.1)
 
-**Note**: -Werror is enabled in Travis CI when building with stack but **not** 
+**Note**: -Werror is enabled in Travis CI when building with stack but **not**
 when building with cabal ([Why?](https://github.com/haskell/cabal/issues/3883))
 
 ## Change log
